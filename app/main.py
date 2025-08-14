@@ -11,10 +11,7 @@ class BaseRobot:
                  coords: list | None = None) -> None:
         self.name = name
         self.weight = weight
-        if coords is None:
-            self.coords = [0, 0]
-        else:
-            self.coords = coords
+        self.coords = [0, 0] if coords is None else coords
 
     def get_info(self) -> str:
         return f"Robot: {self.name}, Weight: {self.weight}"
